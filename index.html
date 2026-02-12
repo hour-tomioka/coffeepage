@@ -31,12 +31,19 @@
            
         }
 
+        .container{
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
         header{
             color: black;
             position: fixed;
             width: 100%;
             padding: 16px;
+            top:0;
             background-color: #FCF8F8;
+            z-index: 9999;
         }
 
         nav {
@@ -77,7 +84,13 @@
             margin-top: 20px;
             margin-bottom: 20px;
             border-radius: 20px;
+            transition: background-color 0.5s ease, transform 0.5s ease;
         }
+
+        .new-drink:hover{
+            transform: scale(1.10);
+        }
+
         #home {
             padding: 40px;
             /* min-height: calc(100vh - 80px); */
@@ -114,11 +127,6 @@
             border: none;
             
         }
-
-        .coffee-container{
-            /* display: flex; */
-        }
-
         .coffee-img{
             height: 300px;
             width: 240px;
@@ -129,10 +137,11 @@
             object-fit: cover;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            
         }
 
         .coffee-img:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
 
         .order-btn:hover{
@@ -177,107 +186,163 @@
         #menu{
             background-color: #F6F0D7;
         }
+
+        .text-content{
+            margin: auto;
+        }
+
+        .paragraph{
+            max-width: 1000px;
+            font-size: 1.2rem;
+            line-height: 3;
+            display: flex;
+            gap:50px;
+            margin: auto;
+        }
+
+        .shop{
+            width: 450px;
+            height: 350px;
+            border-radius: 15px;
+
+        }
+
+        p{
+            flex-wrap: wrap;
+            padding: 10px 10px;
+            margin: auto;
+        }
+      
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Coffee</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#story">Our Story</a></li>
-                <li><a href="contact">Contact</a></li>
-                <input type="text" placeholder="Search...">
-            </ul>
-        </nav>
-    </header>
-    <section id="home">
-        <div class="home-content">
-            <h1>Try our new drink</h1>
-            <h2>Matcha Coconut Cream</h2>
-                <img src="https://www.jenki.co.uk/cdn/shop/articles/coconutcloudmatcha.jpg?v=1716821504" class="new-drink">
-            <p>Discover our latest creation: Coconut Matcha. A perfect blend of creamy coconut and premium matcha.</p>
-            <button class="order-btn">Order now</button>
-        </div>
-    </section>
-
-    <section id="menu">
-        <div coffee="coffee-container">
-            <h1>Signature drinks</h1>
-                <div class="hi">
-                    <div>
-                        <img src="https://i.pinimg.com/736x/89/c9/a0/89c9a051f138b18eef538415e5bd72c0.jpg" class="coffee-img">
-                        <p class="drink-text">Iced Latte</p>
-                        <p class="price-drink">2.50$</p>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">Pring Coffee</div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <input type="text" placeholder="Search...">
+                </ul>
+            </nav>
+        </header>
+        <section id="home">
+            <div class="home-content">
+                <h1>Try our new drink</h1>
+                <h2>Matcha Coconut Cream</h2>
+                    <img src="https://www.jenki.co.uk/cdn/shop/articles/coconutcloudmatcha.jpg?v=1716821504" class="new-drink">
+                <p>Discover our latest creation: Coconut Matcha. A perfect blend of creamy coconut and premium matcha.</p>
+                <button class="order-btn">Order now</button>
+            </div>
+        </section>
+    
+        <section id="menu">
+            <div coffee="coffee-container">
+                <h1>Signature drinks</h1>
+                    <div class="hi">
+                        <div>
+                            <img src="https://i.pinimg.com/736x/89/c9/a0/89c9a051f138b18eef538415e5bd72c0.jpg" class="coffee-img">
+                            <p class="drink-text">Iced Latte</p>
+                            <p class="price-drink">2.50$</p>
+                        </div>
+    
+                       <div>
+                            <img src="https://i.pinimg.com/736x/18/15/38/18153802378eb31812c66057a45956a8.jpg" class="coffee-img">
+                            <p class="drink-text">Iced Americano</p>
+                            <p class="price-drink">2.00$</p>
+                       </div>
+    
+                       <div>
+                            <img src="https://i.pinimg.com/1200x/15/85/de/1585deb660da690bb10d89829b15e08f.jpg" class="coffee-img">
+                            <p class="drink-text">White Creamy Chocolate Coffee</p>
+                            <p class="price-drink">2.80$</p>
+                       </div>
                     </div>
-
-                   <div>
-                        <img src="https://i.pinimg.com/736x/18/15/38/18153802378eb31812c66057a45956a8.jpg" class="coffee-img">
-                        <p class="drink-text">Iced Americano</p>
-                        <p class="price-drink">2.00$</p>
-                   </div>
-
-                   <div>
-                        <img src="https://i.pinimg.com/1200x/15/85/de/1585deb660da690bb10d89829b15e08f.jpg" class="coffee-img">
-                        <p class="drink-text">White Creamy Chocolate Coffee</p>
-                        <p class="price-drink">2.80$</p>
-                   </div>
+    
+                    <hr style="width: 100%; height:3px; background-color: gray; margin-top: 15px;">
+    
+                    <h1 class="more-drinks">More drinks</h1>
+                    <div class="hello">
+                        <div> 
+                            <img src="https://i.pinimg.com/1200x/79/cd/53/79cd53308222549df56152a1ec537a1a.jpg" class="coffee-img">
+                            <p>Latte coconut cream</p>
+                            <p>2.50$</p>
+                        </div>
+    
+                        <div> 
+                            <img src="https://i.pinimg.com/736x/59/24/2c/59242c699b4224df9f3c64bce1e47fe9.jpg" class="coffee-img">
+                            <p>Matcha latte</p>
+                            <p>2.50$</p>
+                        </div>
+    
+                        <div> 
+                            <img src="https://i.pinimg.com/736x/c5/b5/10/c5b510614fa8188dbe063e9f098cc52c.jpg" class="coffee-img">
+                            <p>Matcha Coconut Cream</p>
+                            <p class="price-drink">2.75$</p>
+                        </div>
+    
+                        <div>
+                            <img src="https://i.pinimg.com/1200x/37/6f/38/376f38066c01d3ef5194925c477d3715.jpg" class="coffee-img">
+                            <p>Lemon tea</p>
+                            <p class="price-drink">2.00$</p>
+                        </div>
+    
+                        <div>
+                            <img src="https://i.pinimg.com/1200x/f9/b1/98/f9b1988fa7331e2c9a1e55602d27c9ca.jpg" class="coffee-img">
+                            <p>Soda Passion</p>
+                            <p class="price-drink">2.00$</p>
+                        </div>
+    
+                        <div>
+                            <img src="https://i.pinimg.com/736x/5c/b0/ba/5cb0ba25b5d157fc6e93564df861b579.jpg" class="coffee-img">
+                            <p>Matcha lemonade</p>
+                            <p class="price-drink">2.50$</p>
+                        </div>
+                        
+                        <div>
+                            <img src="https://www.koithe.com/upload_image/ourtea/ourtea_570.jpg" class="coffee-img">
+                            <p>Oolong Milk Tea</p>
+                            <p class="price-drink">3.00$</p>
+                        </div>
+                    </div>
+            </div>
+        </section>
+    
+        <section id="story">
+            <div class="text-content">
+                <h1>Our Story</h1>
+                <div class="paragraph">
+                    <p>
+                        Pring Coffee started with one simple idea — to create a warm and relaxing place 
+                        where everyone can enjoy a perfect cup of coffee. What began as a small street-side 
+                        café has grown into a cozy home for students, friends, and families.
+                    </p>
+                    <img src="https://i.pinimg.com/1200x/86/27/1f/86271f01d3f3226dca8a0b6d610118ca.jpg" class="shop">
                 </div>
 
-                <hr style="width: 100%; height:3px; background-color: gray; margin-top: 15px;">
-
-                <h1 class="more-drinks">More drinks</h1>
-                <div class="hello">
-                    <div> 
-                        <img src="https://i.pinimg.com/1200x/79/cd/53/79cd53308222549df56152a1ec537a1a.jpg" class="coffee-img">
-                        <p>Latte coconut cream</p>
-                        <p>2.50$</p>
-                    </div>
-
-                    <div> 
-                        <img src="https://i.pinimg.com/736x/59/24/2c/59242c699b4224df9f3c64bce1e47fe9.jpg" class="coffee-img">
-                        <p>Matcha latte</p>
-                        <p>2.50$</p>
-                    </div>
-
-                    <div> 
-                        <img src="https://i.pinimg.com/736x/c5/b5/10/c5b510614fa8188dbe063e9f098cc52c.jpg" class="coffee-img">
-                        <p>Matcha Coconut Cream</p>
-                        <p class="price-drink">2.75$</p>
-                    </div>
-
-                    <div>
-                        <img src="https://i.pinimg.com/1200x/37/6f/38/376f38066c01d3ef5194925c477d3715.jpg" class="coffee-img">
-                        <p>Lemon tea</p>
-                        <p class="price-drink">2.00$</p>
-                    </div>
-
-                    <div>
-                        <img src="https://i.pinimg.com/1200x/f9/b1/98/f9b1988fa7331e2c9a1e55602d27c9ca.jpg" class="coffee-img">
-                        <p>Soda Passion</p>
-                        <p class="price-drink">2.00$</p>
-                    </div>
-
-                    <div>
-                        <img src="https://i.pinimg.com/736x/5c/b0/ba/5cb0ba25b5d157fc6e93564df861b579.jpg" class="coffee-img">
-                        <p>Matcha lemonade</p>
-                        <p class="price-drink">2.50$</p>
-                    </div>
+                <div class="paragraph">
+                    <img src="https://i.pinimg.com/1200x/eb/5a/67/eb5a67a4601202f692f4221c01607c0f.jpg" class="shop">
+                    <p>
+                        We carefully select premium coffee beans and fresh ingredients to craft every drink 
+                        with love and quality. From rich iced lattes to refreshing matcha and fruit teas, 
+                        each cup is made to brighten your day.
+                    </p>
+                </div>
                     
-                    <div>
-                        <img src="https://www.koithe.com/upload_image/ourtea/ourtea_570.jpg" class="coffee-img">
-                        <p>Oolong Milk Tea</p>
-                        <p class="price-drink">3.00$</p>
-                    </div>
+                <div class="paragraph">
+                    <p>
+                        At Pring Coffee, we believe coffee is more than just a drink — it’s a moment to relax, 
+                        connect, and create memories. Thank you for being part of our journey. We can’t wait 
+                        to serve you your next favorite drink.
+                    </p>
+                    <img src="https://i.pinimg.com/736x/21/4c/8d/214c8dab170767bfc96c9b46be2fbaae.jpg" class="shop">
                 </div>
-        </div>
-    </section>
-
-    <section id="Our story">
-        <div>
-            
-        </div>
-    </section>
+            </div>
+        </section>
+    </div>
+    
 </body>
 </html>
